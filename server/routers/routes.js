@@ -44,24 +44,27 @@ router.post("/register", async (req, res) => {
 router.post("/login", async (req, res) => {
   try {
     const { email, password } = req.body;
-
     if (!email || !password) {
       res.status(422).json({ error: "Please fill all the fields" });
     }
 
-
     const findUser = await User.findOne({ email: email });
     if (!findUser) {
-      res.status(404).json({ message: "User not found with these credentials" });
+      res
+        .status(404)
+        .json({ message: "User not found with these credentials" });
     } else {
-        const isMatch = await bcrypt.compare(password , findUser.password);
-        if(!isMatch){
-            res.status(404).json({ message: "User not found with these credentials" });
-        }
-        else{
-            res.send(findUser);
-            console.log(findUser);
-        }
+      const isMatch = await bcrypt.compare(password, findUser.password);
+      const token = await findUser.generateAuthToken()
+      console.log(token)
+      if (!isMatch) {
+        res
+          .status(404)
+          .json({ message: "User not found with these credentials" });
+      } else {
+        res.send(findUser);
+        console.log(findUser);
+      }
     }
   } catch (error) {
     console.log(error);
