@@ -1,16 +1,23 @@
+const dotenv = require('dotenv');
 const express = require('express');
 const app = express();
-const port = process.env.PORT || 3000;
 
+dotenv.config(({path:'./.env'}))
+require('./db/conn')
+
+app.use(express.json())
+
+
+// We link the Router File 
+app.use(require('./routers/routes'))
+
+const port = process.env.PORT;
 // Middleware
 const middleware = (req, res, next) =>{
     console.log("hello middleware")
     next()
 }
 
-app.get('/', (req, res) =>{
-    res.send("Hello from the server")
-})
 
 app.get('/about',middleware, (req, res) =>{
     res.send("Hello from the about")
