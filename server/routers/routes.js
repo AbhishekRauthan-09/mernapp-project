@@ -61,6 +61,8 @@ router.post("/login", async (req, res) => {
         res
           .status(404)
           .json({ message: "User not found with these credentials" });
+
+        res.cookie("jwttoken", token , {expiresIn: '1h'})
       } else {
         res.send(findUser);
         console.log(findUser);
