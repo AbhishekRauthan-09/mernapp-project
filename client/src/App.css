@@ -99,3 +99,119 @@
   margin-bottom: .5rem !important;
 }
 
+
+/* ================> About me page <=======================*/
+.aboutMePage{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 80vh;
+}
+
+.aboutBox{
+  height: 70vh;
+  width: 40%;
+  box-shadow: 1px 0 5px #2328296a;
+}
+
+.aboutBox .first_section{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40%;
+  position: relative;
+}
+
+.aboutBox .first_section .imgSection{
+  height: 90%;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 1px 0 5px #2328296a;
+  /* margin-left: 40px; */
+}
+
+.aboutBox .first_section .imgSection img{
+  height: 100%;
+}
+
+.aboutBox .first_section .nameProfession_section{
+  margin-left: 30px;
+}
+
+.aboutBox .first_section .nameProfession_section h5{
+  margin-bottom: 0 ;
+  color: #17c5e0;
+  font-size: 1.5em;
+}
+
+.aboutBox .first_section .nameProfession_section span,p{
+  margin-left: 5px;
+}
+
+.aboutBox .first_section .nameProfession_section p span{
+  color: #17c5e0;
+}
+
+.aboutBox .first_section .editBtn{
+  position:absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.aboutBox .first_section .editBtn input{  
+  padding: 5px 8px;
+  border: none;
+  color: #18292c65;
+}
+
+.aboutBox .content_section{
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  height: 60%;
+}
+
+.aboutBox .content_section ul{
+  margin-top: 30px;
+}
+
+.aboutBox .content_section ul li{
+  list-style: none;
+  margin: 5px 0 !important;
+  font-size: 1.1em;
+  font-weight: 500;
+  color: #080d0ecf;
+}
+
+.aboutBox .content_section ul li span{
+  color: #17c5e0;
+  font-weight: 400;
+  margin-left: 20px;
+}
+
+/* ============================> Errorpage<================= */
+
+.errorPage404{
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.errorPage404 ion-icon{
+  font-size: 7em;
+  font-weight: 300;
+}
+
+.errorPage404 h1{
+  font-size: 2.1em;
+  font-weight: 500;
+  text-align: center;
+}
+
+.errorPage404 p{
+  font-size: 1.3em;
+  text-align: center;
+  color: #17c5e0;
+}
