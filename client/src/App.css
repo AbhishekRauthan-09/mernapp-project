@@ -70,3 +70,32 @@
 .contact_info_item .contact_info_content span{
   font-size: .8em;
 }
+
+/* ================> Home Page <================== */
+
+.homePage{
+  min-height: 75vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.homePage::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 50%;
+  background-color: #899cf05e !important;
+  z-index: -1;
+}
+
+.homePage .home_div p{
+  color: #17c5e0;
+  font-size: 1.4em;
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: .5rem !important;
+}
+
