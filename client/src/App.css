@@ -1,38 +1,72 @@
-.App {
-  text-align: center;
+*{
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.myContainer {
+  margin-top: 40px;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: column;
 }
 
-.App-link {
-  color: #61dafb;
+.active{
+  color: #b82cb1 !important;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.myContainer h3{
+  margin: 35px 0;
+  text-align: center;
+  background-color: #b82cb1;
+  color: #ffff;
+  display: inline-block;
+  padding: 10px;
+  border-radius: 12px;
+}
+
+.inputRows{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* Contact Page */
+.contact_info_item{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  border-radius: 4px;
+  box-shadow: 1px 0px 3px #1916198b;
+}
+
+.contact_info_item ion-icon{
+  font-size: 2em;
+  margin-right: 15px;
+  color: #17c5e0;
+}
+
+.itemRow{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact_info_item{
+  height: 100px;
+  width: auto;
+  margin: 0 30px;
+  padding: 0px 35px;
+}
+
+.contact_info_item .contact_info_content h4{
+  font-size: 1em;
+  margin: 0 0;
+  color: #b82cb1;
+}
+
+.contact_info_item .contact_info_content span{
+  font-size: .8em;
 }
