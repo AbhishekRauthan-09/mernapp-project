@@ -1,15 +1,19 @@
-import React from "react";
-import {NavLink } from "react-router-dom";
+import React, { useContext } from "react";
+import { NavLink } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 
+import { userContext } from "../App";
+
 const Navbar = () => {
+  const { state } = useContext(userContext);
   return (
     <>
-      <nav className="navbar bg-dark navbar-expand-lg bg-body-tertiary " data-bs-theme="dark">
+      <nav
+        className="navbar bg-dark navbar-expand-lg bg-body-tertiary "
+        data-bs-theme="dark"
+      >
         <div className="container-fluid">
-          <span className="navbar-brand">
-            Navbar
-          </span>
+          <span className="navbar-brand">Navbar</span>
           <button
             className="navbar-toggler"
             type="button"
@@ -22,7 +26,7 @@ const Navbar = () => {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav ms-auto mb-2 mb-lg-0" >
+            <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
               <li className="nav-item">
                 <NavLink className="nav-link " aria-current="page" to="/">
                   Home
@@ -36,28 +40,53 @@ const Navbar = () => {
               </li>
 
               <li className="nav-item">
-                <NavLink className="nav-link " aria-current="page" to="/contact">
+                <NavLink
+                  className="nav-link "
+                  aria-current="page"
+                  to="/contact"
+                >
                   Contact
                 </NavLink>
               </li>
 
-              <li className="nav-item">
-                <NavLink className="nav-link " aria-current="page" to="/login">
-                  Login
-                </NavLink>
-              </li>
+              {state ? (
+                <li className="nav-item">
+                  <NavLink
+                    className="nav-link "
+                    aria-current="page"
+                    to="/logout"
+                  >
+                    Logout
+                  </NavLink>
+                </li>
+              ) : (
+                <>
+                  <li className="nav-item">
+                    <NavLink
+                      className="nav-link "
+                      aria-current="page"
+                      to="/signup"
+                    >
+                      SignUp
+                    </NavLink>
+                  </li>
 
-              <li className="nav-item">
-                <NavLink className="nav-link " aria-current="page" to="/signup">
-                  SignUp
-                </NavLink>
-              </li>
-
+                  <li className="nav-item">
+                    <NavLink
+                      className="nav-link "
+                      aria-current="page"
+                      to="/login"
+                    >
+                      Login
+                    </NavLink>
+                  </li>
+                </>
+              )}
             </ul>
           </div>
         </div>
       </nav>
-      <Outlet/>
+      <Outlet />
     </>
   );
 };

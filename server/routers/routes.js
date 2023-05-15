@@ -99,6 +99,7 @@ router.get("/aboutme",authenticate, async (req, res) => {
   // }
   res.send(req.rootUser)
 });
+
 router.get("/getdata",authenticate, async (req, res) => {
   res.send(req.rootUser)
 });
@@ -124,7 +125,11 @@ router.post('/contact',authenticate, async (req, res) => {
       console.log(error)
     }
 
-
 })
+
+router.get("/logout", async (req, res) => {
+  res.clearCookie('jwttoken',{path:'/'})
+  res.status(200).send('user logout')
+});
 
 module.exports = router;

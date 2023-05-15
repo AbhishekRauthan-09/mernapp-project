@@ -1,7 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { NavLink , useNavigate} from "react-router-dom";
+import { userContext } from "../App";
 
 const Login = () => {
+
+  const {dispatch} = useContext(userContext);
+
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -23,6 +27,7 @@ const Login = () => {
       alert("Invalid credentials")
     }
     else{
+      dispatch({type:"USER",payload:true})
       alert("Login successful")
       navigate('/')
     }
